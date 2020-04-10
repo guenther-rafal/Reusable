@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq.Expressions;
 
-namespace SmartFillCommon.Specification
+namespace Reusable.Specification
 {
     public interface ISpecification<TSpecificationSubject, TReturn>
     {

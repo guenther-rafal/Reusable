@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace SmartFillCommon.Specification.Impl
+namespace Reusable.Specification.Impl
 {
     public class QuerySpecification<TSpecificationSubject> : ISpecification<IQueryable<TSpecificationSubject>, IQueryable<TSpecificationSubject>>
     {

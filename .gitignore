@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/Reusable/v16
+/.vs
+/Reusable/bin/Debug/netcoreapp3.1
+/Reusable/.vs/Reusable/v16
+/Reusable/obj
+/ReusableTests/bin/Debug/netcoreapp3.1
+/ReusableTests/obj

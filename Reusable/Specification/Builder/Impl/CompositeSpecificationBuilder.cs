@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Reusable.Specification.ExpressionExtension;
+using System;
 using System.Linq.Expressions;
 
 namespace Reusable.Specification.Builder.Impl
@@ -13,20 +14,7 @@ namespace Reusable.Specification.Builder.Impl
 
         public ICompositeSpecificationBuilder<TSubject> And(Expression<Func<TSubject, bool>> expression)
         {
-            var andExpression = System.Linq.Expressions.Expression.And(Expression, expression) as Expression<Func<TSubject, bool>>;
-            SetSpecificationExpression(andExpression);
-            return this;
-        }
-
-        private void SetSpecificationExpression(Expression<Func<TSubject, bool>> newExpression)
-        {
-            Expression = System.Linq.Expressions.Expression.Lambda<Func<TSubject, bool>>(newExpression);
-        }
-
-        public ICompositeSpecificationBuilder<TSubject> Or(Expression<Func<TSubject, bool>> expression)
-        {
-            var orExpression = System.Linq.Expressions.Expression.Or(Expression, expression) as Expression<Func<TSubject, bool>>;
-            SetSpecificationExpression(orExpression);
+            Expression = Expression.And(expression);
             return this;
         }
 
@@ -36,6 +24,12 @@ namespace Reusable.Specification.Builder.Impl
             {
                 return And(expression);
             }
+            return this;
+        }
+
+        public ICompositeSpecificationBuilder<TSubject> Or(Expression<Func<TSubject, bool>> expression)
+        {
+            Expression = Expression.Or(expression);
             return this;
         }
 
